@@ -1,0 +1,34 @@
+<html>
+<head>
+<style>
+.divcss5{ border:1px ; width:900px; height:900px; margin-left: auto;
+margin-right: auto} 
+</style>
+</head>
+<body >
+	<div class="divcss5"><h1>java锁</h1>
+<p>标签（空格分隔）： java</p>
+<p>Java的多线程通信是共享内存模型，Java线程之间的通信总是隐式进行，整个通信过程对程序员完全透明。为了使线程有序的对变量进行操作，java提供了锁机制。</p>
+<ul>
+<li>synchronized</li>
+<li>lock</li>
+</ul>
+<h2>synchronized</h2>
+<p>操作系统的概念来说，synchronized就实现了管程机制，简而言之就是一个互斥原语。实现了在锁住资源的时候，别的线程无法访问他。
+之所以多线程操作会出现数据错误是因为java的内存模型 如下图
+<img src="https://s3quuq.bn1304.livefilestore.com/y2p54M1yrz6UpYKVslrEYKhaa_5Ha_pZ2UhqSaQGItlU_xWG8qK9AjXkLoccH2xOkZaeIlODPNN-r9Vqu41D_0KaHBAppa1_vCF-0eW95SHA7g/Image.png?psid=1" alt="内存模型" />
+我们线程操作的不是共享变量的实体而是它的一个副本，如果不按照顺序进行操作的话，有可能会发生数据丢生，数据冲突，产生脏数据等等的问题。关于synchronized的用法就不多说了
+ 关于锁的类型与jvm优化锁的方法可以详见
+<a href="http://www.majin163.com/2014/03/17/synchronized2/">JVM锁实现探究2：synchronized深探</a>
+由此可见，虽然是一个排他锁，但是为了性能，jvm做了种种的优化策略。</p>
+<h2>lock</h2>
+<p>虽然synchronized已经很方便的实现了互斥锁的功能，但是还是有缺点</p>
+<ul>
+<li>无法中断一个正在等候获得锁的线程</li>
+<li>无法通过投票得到锁，如果不想等下去，也就没法得到锁。</li>
+</ul>
+<p>相比于synchronized lock多了 锁投票，定时锁等候和中断锁等候
+但是与之相比的是编程难度的提升。</p>
+</div>
+</body>
+</html>
