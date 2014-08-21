@@ -1,12 +1,28 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<style>
-.divcss5{ border:1px ; width:900px; height:900px; margin-left: auto;
-margin-right: auto} 
-</style>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+	<style type="text/css">
+.TEXT{
+	border-radius: 5px;
+	border: 1px solid #AAAAAA;
+	height: 100%;
+	margin: 20px auto 0;
+	overflow: hidden;
+	padding: 5px;
+	width: 800px;
+}
+.TEXT li{
+	font-size: 20px;
+	padding: 5px;
+
+}
+	</style>
 </head>
+
 <body >
-	<div class="divcss5"><h1>java锁</h1>
+	<div class="TEXT"><h1>java锁</h1>
 <p>标签（空格分隔）： java</p>
 <p>Java的多线程通信是共享内存模型，Java线程之间的通信总是隐式进行，整个通信过程对程序员完全透明。为了使线程有序的对变量进行操作，java提供了锁机制。</p>
 <ul>
@@ -16,7 +32,7 @@ margin-right: auto}
 <h2>synchronized</h2>
 <p>操作系统的概念来说，synchronized就实现了管程机制，简而言之就是一个互斥原语。实现了在锁住资源的时候，别的线程无法访问他。
 之所以多线程操作会出现数据错误是因为java的内存模型 如下图
-<img src="https://s3quuq.bn1304.livefilestore.com/y2p54M1yrz6UpYKVslrEYKhaa_5Ha_pZ2UhqSaQGItlU_xWG8qK9AjXkLoccH2xOkZaeIlODPNN-r9Vqu41D_0KaHBAppa1_vCF-0eW95SHA7g/Image.png?psid=1" alt="内存模型" />
+<img src="https://s3quuq.bn1304.livefilestore.com/y2p54M1yrz6UpYKVslrEYKhaa_5Ha_pZ2UhqSaQGItlU_xWG8qK9AjXkLoccH2xOkZaeIlODPNN-r9Vqu41D_0KaHBAppa1_vCF-0eW95SHA7g/Image.png?psid=1" alt="内存模型" /><br>
 我们线程操作的不是共享变量的实体而是它的一个副本，如果不按照顺序进行操作的话，有可能会发生数据丢生，数据冲突，产生脏数据等等的问题。关于synchronized的用法就不多说了
  关于锁的类型与jvm优化锁的方法可以详见
 <a href="http://www.majin163.com/2014/03/17/synchronized2/">JVM锁实现探究2：synchronized深探</a>
